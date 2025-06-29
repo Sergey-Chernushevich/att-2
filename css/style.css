@@ -1,0 +1,219 @@
+/* 1. Use a more-intuitive box-sizing model */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+/* 7. Avoid text overflows */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Roboto_SemiBold.woff2") format("woff2"), url("../fonts/Roboto_SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+}
+
+:root {
+  --font-family: "Roboto", sans-serif;
+}
+
+* {
+  font-family: var(--font-family);
+}
+
+.card-list {
+  display: flex;
+  row-gap: 32px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  min-width: 320px;
+  padding: 16px;
+}
+
+.card-list__card {
+  width: calc(50% - 16px);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 143%;
+  color: #6b7280;
+}
+
+.card__subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.card__paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #4b5563;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.person {
+  display: flex;
+  gap: 12px;
+}
+
+.person__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.person__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person__name {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 144%;
+  color: #1f2937;
+}
+
+.person__date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #6b7280;
+}
+
+@media only screen and (min-width: 2700px) {
+  html {
+    zoom: 200%;
+  }
+}
+
+@media only screen and (min-width: 8000px) {
+  html {
+    zoom: 400%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-list__card {
+    width: 100%;
+  }
+}
